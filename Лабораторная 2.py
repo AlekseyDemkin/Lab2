@@ -1,24 +1,4 @@
 import csv
-import os
-
-RED = "\u001b[41m"
-BLUE = "\u001b[44m"
-WHITE = "\u001b[47m"
-END = "\u001b[0m"
-d = 24
-for i in range(6):
-    if i == 0 or i == 5:
-        print(RED + " " * d + END)
-    elif i == 1 or i == 4:
-        print(WHITE + " " * d + END)
-    else:
-        print(BLUE + " " * d + END)
-n = int(input("Введите кол-во повторений узора:"))
-print((" " * 9 + WHITE + " " * 2 + END + " " * 9 + END) * n)
-print((" " * 8 + WHITE + " " * 1 + END + " " * 2 + END + WHITE + " " * 1 + END + " " * 8 + END) * n)
-print((" " * 6 + WHITE + " " * 2 + END + " " * 4 + END + WHITE + " " * 2 + END + " " * 6 + END) * n)
-print((" " * 3 + WHITE + " " * 3 + END + " " * 8 + END + WHITE + " " * 3 + END + " " * 3 + END) * n)
-print((WHITE + " " * 4 + END + " " * 12 + END + WHITE + " " * 4 + END) * n)
 
 
 def esc(code):
@@ -65,6 +45,21 @@ BLUE = esc(44)
 WHITE = esc(47)
 END = esc(0)
 
+d = 24
+for i in range(6):
+    if i == 0 or i == 5:
+        print(RED + " " * d + END)
+    elif i == 1 or i == 4:
+        print(WHITE + " " * d + END)
+    else:
+        print(BLUE + " " * d + END)
+n = int(input("Введите кол-во повторений узора:"))
+print((" " * 9 + WHITE + " " * 2 + END + " " * 9 + END) * n)
+print((" " * 8 + WHITE + " " * 1 + END + " " * 2 + END + WHITE + " " * 1 + END + " " * 8 + END) * n)
+print((" " * 6 + WHITE + " " * 2 + END + " " * 4 + END + WHITE + " " * 2 + END + " " * 6 + END) * n)
+print((" " * 3 + WHITE + " " * 3 + END + " " * 8 + END + WHITE + " " * 3 + END + " " * 3 + END) * n)
+print((WHITE + " " * 4 + END + " " * 12 + END + WHITE + " " * 4 + END) * n)
+
 array_plot = [[0 for col in range(10)] for row in range(10)]
 result = [0 for i in range(10)]
 
@@ -99,4 +94,3 @@ print()
 print(round(count_m / pr, 1), "%", BLUE + " " * round(count_m / pr) + END)
 print()
 print(round(count_b / pr, 1), "%", RED + " " * round(count_b / pr) + END)
-os.system("cls")
